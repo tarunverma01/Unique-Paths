@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int maxPower(string s) {
+        int currCount=1;
+        int maxCount = 1;
+        for(int i=1;i<s.size();i++){
+            if(s[i]==s[i-1]){
+                currCount++;
+            }else{
+                currCount=1;
+            }
+            maxCount=max(maxCount,currCount);
+        }
+        return maxCount;
+    }
+};
